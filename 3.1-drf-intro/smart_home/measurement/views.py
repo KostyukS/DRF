@@ -17,7 +17,7 @@ class SensorListCreateAPIView(ListCreateAPIView):
 class SensorRetrieveUpdateAPIView(RetrieveUpdateAPIView):
     """Класс для создания (обновления) датчиков в модели Sensor"""
     queryset = Sensor.objects.all()
-    serializer_class = SensorSerializer
+    serializer_class = SensorDetailSerializer
 
 
 class MeasurementListCreateAPIView(ListCreateAPIView):
@@ -26,7 +26,7 @@ class MeasurementListCreateAPIView(ListCreateAPIView):
     serializer_class = MeasurementSerializer
 
 
-class SensorDetailRetrieveUpdateAPIView(RetrieveAPIView):
+class SensorDetailRetrieveUpdateAPIView(RetrieveUpdateAPIView):
     """Класс для получения информации по датчику"""
     queryset = Sensor.objects.all()
     serializer_class = SensorDetailSerializer
